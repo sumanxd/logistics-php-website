@@ -1,0 +1,299 @@
+<html>                    
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<title> Logistics </title>
+
+
+<style>
+a:hover{background-color:rgb(255,195,0);}
+section{background-image:url("images/ind.jpg");
+background-size:1340px 750px;}
+.log{ 
+width:1000px;
+height:770px;
+background-color:#c2f6f8d6;
+margin:0 auto;
+margin-left:140px;
+padding-top:10px;}
+body {font-family: Arial;}
+.tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color:#f8c2c2fa;
+}
+
+.tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-size: 17px;
+}
+.tab button:hover {
+    background-color: grey;
+}
+.tab button.active {
+    background-color:#e47f16b3;
+}
+<!--.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+}
+input{border-radius:5px;}-->
+h1{text-align:center;}
+</style>   
+</head>
+<body>
+<div style="height:50px;">
+		<text style="color:#405FA6;font-size:30;margin:-6px;"> Logistics</text>
+	
+		<a href="#" style="padding:10px;margin-left:50%;background-color:rgb(255,195,0);"> HOME &nbsp;&nbsp;</a>
+        <a href="about.html" style="padding:10px;"> ABOUT US &nbsp;&nbsp;</a>
+		<a href="service.html" style="padding:10px;"> SERVICES &nbsp;&nbsp;</a>
+		<a href="contact.html" style="padding:10px;"> CONTACT &nbsp;&nbsp;</a>
+		<a href="admin/login.php" style="padding:10px;"> Login &nbsp;&nbsp;</a>
+	</div>
+	<section style="height:120%;width:100%;">
+	 <div class="log">
+	<div class="tab">
+	  <button class="tablinks" onclick="openCity(event, 'Raw material') " id="default">Raw material</button>
+	  <button class="tablinks" onclick="openCity(event,'Production')">Production</button>
+	  <button class="tablinks" onclick="openCity(event, 'Sales')">Sales</button>
+		<button class="tablinks" onclick="openCity(event, 'Payment')">Payment</button>
+		  <button class="tablinks" onclick="openCity(event, 'Received payment')">Received payment</button>
+			<button class="tablinks" onclick="openCity(event, 'Items opening stock')">Items opening stock</button>
+	</div>
+	<div id="Raw material" class="tabcontent">
+	<h1> Raw material</h1>
+	
+	<form action="insert.php" method="post">
+	
+	 <div style="border-right:1px dotted bl
+	 ack;float:left;padding:20px;padding-left:100px;width:40%">
+	<p>Name Of Supplier</p> 
+	<i class="fa fa-male" style="font-size:24px"></i>
+	<input name="supplier" style=" height:36px;border:1px solid blue;width:210px"><br>
+
+	<p>date</p>
+	<i class="fa fa-calendar" style="font-size:24px"></i>
+	
+	<input   name="raw2" id="date" type="date" style="height:36px;border:1px solid blue;width:210px;"type="text"><br>
+	<p>Material*</p>
+	<i class="fa fa-gift" style="font-size:24px"></i>
+	<select style="height:36px;border:1px solid blue;width:210px; " name="material" type="text" placeholder="select week">
+
+
+	  <option name="material">Material 1</option>
+	  <option name="material">Material 2</option>
+	  <option name="material">Material 3</option>
+	  <option name="material">Material 4</option>
+	  <option name="material">Material 5</option>
+	  
+	</select>
+	<br>
+	<p>No.Of Bags *</p>
+	<i class="fa fa-shopping-bag" style="font-size:24px"></i>
+	<input  name="bags" style=" height:36px;border:1px solid blue;width:210px; "type="number"><br>
+	<p>Vehicle No.*</p>
+	<i class="fa fa-sort-numeric-asc" style="font-size:24px"></i>
+	<input  name="vehicle" style="height:36px;border:1px solid blue;width:210px; "type="number"><br>
+	<p>Rate*</p>
+	<i class="fa fa-rupee" style="font-size:24px"></i>
+	<input name="rate" style="height:36px;border:1px solid blue;width:210px; "type="number"><br>
+	</div>
+	<div style="float:right;padding-right:50px;width:40% ">
+	<br>
+	<p>Payment Condition</p>
+	<i class="fa fa-money" style="font-size:24px"></i>
+	<input  name="payment" style="height:36px;border:1px solid blue;width:210px; "type="text"><br>
+
+
+	<p>Gross wt*</p>
+	<i class="fa fa-window-maximize" style="font-size:24px"></i>
+	<input name="gross" style="height:36px;border:1px solid blue;width:210px; "type="number"><br>
+	<p>Tare wt*</p>
+	<i class="fa fa-truck" style="font-size:24px"></i>
+	<input name="tare" style="height:36px;border:1px solid blue;width:210px;"type="number"><br>
+	<p>Bags wt*</p>
+	<i class="fa fa-shopping-bag" style="font-size:24px"></i>
+	<input name="bagw" style="height:36px;border:1px solid blue;width:210px;"type="number"><br>
+	<p>Nett wt*</p>
+	<i class="fa fa-calculator" style="font-size:24px"></i>
+	<input name="net" style="height:36px;border:1px solid blue;width:210px;"type="number"><br>
+	<p>Remarks</p>
+	<i class="fa fa-comments-o" style="font-size:24px"></i>
+	<input  name="remark" style="height:80px;border:1px solid blue;" type="text"><br>
+	</div>
+	<input style= "width:100%;height:40px;background-color:green;font-size:18px;margin:10px; "type="submit" value="Insert"  ><br>
+	</form>
+	</div>
+	<div id="Production" class="tabcontent">
+	<h1>Production</h1>
+	  <form  action="insert2.php" method="post">
+	<div style="border-right:1px dotted bl
+	 ack;float:left;padding:20px;padding-left:100px;width:40%">
+	<p>Block*</p>
+	<i class="fa fa-window-minimize" style="font-size:24px"></i>
+	<select  style="height:36px;border:1px solid blue;width:210px;" "type="text" name="block" placeholder="select block">
+
+	  
+	  <option name="block">block1</option>
+	  <option name="block">block2</option>
+	  <option name="block">block3</option>
+	  </select>
+	  <br>
+	<p>week*</p>
+	<i class="fa fa-bars" style="font-size:24px"></i>
+	<select style="height:36px;border:1px solid blue;width:210px;" type="text" name="week" placeholder="select week">
+
+
+	  <option name="week">week1</option>
+	  <option name="week">week2</option>
+	  <option name="week">week3</option>
+	</select>
+
+	<br>
+	<p>Date</p>
+	<i class="fa fa-calendar" style="font-size:24px"></i>
+	<input  id="date" type="date" style="height:36px;border:1px solid blue;width:210px;"type="text"><br>
+	<p>Production*</p>
+	<i class="fa fa-shopping-bag" style="font-size:24px"></i>
+	<input style="height:36px;border:1px solid blue;width:210px; "type="number" name="production"><br>
+	<p>Damage*</p>
+	<i class="fa fa-chain-broken" style="font-size:24px"></i>
+	<input style="height:36px;border:1px solid blue;width:210px;"type="number" name="damage"><br>
+	<p>Total*</p>
+	<i class="fa fa-calculator" style="font-size:24px"></i>
+	<input style="height:36px;border:1px solid blue;width:210px; "type="number" name="total"><br>
+		</div>
+	<div style="float:right;padding-right:50px;width:40% ">
+	<br>
+	<p>sales*</p>
+	<i class="fa fa-users" style="font-size:24px"></i>
+	<input style="height:36px;border:1px solid blue;width:210px; "type="text" name="sales"><br>
+
+	<p>Rate*</p>
+	<i class="fa fa-inr" style="font-size:24px"></i>
+	<input style="height:36px;border:1px solid blue;width:210px; "type="number" name="rate"><br>
+
+	<p>Machinery*</p>
+	<i class="fa fa-industry" style="font-size:24px"></i>
+	<input style="height:36px;border:1px solid blue;width:210px; "type="number" name="machinery"><br>
+	<p>Remaining material*</p>
+	<i class="fa fa-bars" style="font-size:24px"></i>
+	<input style="height:36px;border:1px solid blue;width:210px;"type="number" name="rmaterial"><br>
+	<p>Labour*</p>
+	<i class="fa fa-users" style="font-size:24px"></i>
+	<input style="height:36px;border:1px solid blue;width:210px;" type="text" name="labour"><br>
+	<p>Productivity%*</p>
+	<i class="fa fa-product-hunt" style="font-size:24px"></i>
+	<input style="height:36px;border:1px solid blue;width:210px;" type="text" name="productivity"><br>
+	</div>
+	<input style= "width:100%;height:50px;background-color:green;font-size:18px;margin:10px; "type="submit" value="Insert" ><br>
+	</form>
+	</div>
+	<div id="Sales" class="tabcontent">
+	<h1>Sales</h1>
+	 <form style="margin-left:30%" action="insert3.php" method="post">
+	 <p>Date</p>
+	<i class="fa fa-calendar" style="font-size:24px"></i>
+	<input  id="date" type="date" style="height:36px;border:1px solid blue;width:210px;"type="text"><br>
+	 <p>Sales*</p>
+	 <i class="fa fa-product-hunt" style="font-size:24px"></i>
+	<input style="height:36px;border:1px solid blue;width:210px;"type="number" name="sale"><br>
+	<p>Nett Stock*</p>
+	<i class="fa fa-product-hunt" style="font-size:24px"></i><input style="height:36px;border:1px solid blue;width:210px;" name="nstock"type="number"><br>
+	<p>Closing Stock*</p>
+	<i class="fa fa-product-hunt" style="font-size:24px"></i>
+	<input style="height:36px;border:1px solid blue;width:210px;" type="text" name="cstock"><br>
+	<input style= "width:70%;height:50px;background-color:green; font-size:18px;margin:10px;"type="submit" value="send" ><br>
+	</form>
+	</div>
+	<div id="Payment" class="tabcontent">
+	<h1>Payment</h1>
+	 <form style="margin-left:160px;" action="insert4.php" method="post">
+	 <p>Date</p>
+	<i class="fa fa-calendar" style="font-size:24px"></i>
+	<input  id="date" type="date" style="height:36px;border:1px solid blue;width:210px;"type="text"><br>
+	 <p>Type of bill</p>
+	 <i class="fa fa-file" style="font-size:24px"></i>
+	<input style="height:36px;border:1px solid blue;width:210px;"type="number" name="bill"><br>
+	<p>Name</p>
+	<i class="fa fa-male" style="font-size:24px"></i>
+	<input style="height:36px;border:1px solid blue;width:210px" name="name"><br>
+	<p>Payment type</p>
+	<i class="fa fa-paypal" style="font-size:24px"></i>
+	<input style="height:36px;border:1px solid blue;width:210px;" type="text" name="payment"><br>
+	<p>Amount</p>
+	<i class="fa fa-money" style="font-size:24px"></i>
+	<input style="height:36px;border:1px solid blue;width:210px;" type="text" name="amount"><br>
+
+	<input style= "width:70%;height:50px;background-color:green;font-size:18px; margin:10px;"type="submit" value="send" ><br>
+	</form>
+	</div>
+	<div id="Received payment" class="tabcontent">
+	<h1>Received payment</h1>
+	 <form style="margin-left:160px;" action="insert5.php" method="post">
+	 <p>Date</p>
+	<i class="fa fa-calendar" style="font-size:24px"></i>
+	<input  id="date" type="date" style="height:36px;border:1px solid blue;width:210px;"type="text"><br>
+	 
+	<p>Receiver Name</p>
+	<i class="fa fa-male" style="font-size:24px"></i>
+	<input style="height:36px;border:1px solid blue;width:210px" name="rname"><br>
+
+	<p>Amount</p>
+	<i class="fa fa-money" style="font-size:24px"></i>
+	<input style="height:36px;border:1px solid blue;width:210px;" type="text" name="ramount"><br>
+
+	<input style= "width:70%;height:50px;background-color:green;font-size:18px; margin:10px;"type="submit" value="send" ><br>
+	</form>
+	</div>
+	<div id="Items opening stock" class="tabcontent">
+	<h1>Items opening stock</h1>
+	 <form style="margin-left:160px;" action="insert6.php" method="post">
+	 <p>Material 1</p>
+	<i class="fa fa-th-large" style="font-size:24px"></i>
+	<input style="height:36px;border:1px solid blue;width:210px;"type="text" name="m1"><br>
+	 <p>Material 2</p>
+	 <i class="fa fa-th-large" style="font-size:24px"></i>
+	<input style="height:36px;border:1px solid blue;width:210px;"type="number" name="m2"><br>
+	<p>Material 3</p>
+	<i class="fa fa-th-large" style="font-size:24px"></i>
+	<input style="height:36px;border:1px solid blue;width:210px" name="m3"><br>
+	<p>Material 4</p>
+	<i class="fa fa-th-large" style="font-size:24px"></i>
+	<input style="height:36px;border:1px solid blue;width:210px;" type="text" name="m4"><br>
+	<p>Material 5</p>
+	<i class="fa fa-th-large" style="font-size:24px"></i>
+	<input style="height:36px;border:1px solid blue;width:210px;" type="text" name="m5"><br>
+
+	<input style= "width:70%;height:50px;background-color:green; font-size:18px;margin:10px;"type="submit" value="send" ><br>
+	</form>
+	</div>
+
+	<script>
+	function openCity(evt, cityName) {
+		var i, tabcontent, tablinks;
+		tabcontent = document.getElementsByClassName("tabcontent");
+		for (i = 0; i < tabcontent.length; i++) {
+			tabcontent[i].style.display = "none";
+		}
+		tablinks = document.getElementsByClassName("tablinks");
+		for (i = 0; i < tablinks.length; i++) {
+			tablinks[i].className = tablinks[i].className.replace(" active", "");
+		}
+		document.getElementById(cityName).style.display = "block";
+		evt.currentTarget.className += " active";
+	}
+	document.getElementById("default").click();
+	</script>
+	</div>
+	</section>
+</body>
+</html>
